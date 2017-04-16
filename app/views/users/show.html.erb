@@ -1,6 +1,6 @@
 <div id='contain'>
-  <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/14222338_10207850048434033_2604131363820665823_n.jpg?oh=3528ac137e1c5a21ba0d71036cedbc72&oe=5996E069" id='mainpic'>
-  <div id='loginbox' style='width:30%'>
+  <img class='col-xs-12' src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/14222338_10207850048434033_2604131363820665823_n.jpg?oh=3528ac137e1c5a21ba0d71036cedbc72&oe=5996E069" id='mainpic'>
+  <div class='col-xs-12' id='loginbox'>
     <h4>Sign Up!</h4>
     <p>It's easy! Just fill in this form and you're a member!</p>
     <%= form_for User.new do |f| %>
@@ -20,10 +20,10 @@
 </div>
 
 <div class='articlescontainer'>
-  <h1>Reasons To Join</h1><br><br>
+  <h1>Reasons To Join CareDash</h1><br><br>
   <% Article.all.each do |a|%>
-  <div class='article' style='width:25%'>
-    <%= image_tag a.image_url, style: 'width:200px;height:200px', class: 'center-block'%> <br>
+  <div class='article'>
+    <%= image_tag a.image_url, class: 'center-block photo'%> <br>
     <h4 stlye='align:center'><%= a.name %></h4>
     <span>
       <%= truncate(a.text, length: 295) %>

@@ -13,12 +13,7 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+
           <% if !current_user %>
             <a data-toggle="modal" data-target="#myModal"><button class='login' id='nav'>Login</button></a>
           <% else %>
@@ -46,9 +41,7 @@
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      </div>
     </div>
     </nav>
     <% if flash[:success] %>
@@ -69,14 +62,14 @@
 
     <%= yield %>
     <div id='cont'>
-      <div class='footerarticle' style='width:10%'>
+      <div class='footerarticle'>
         <h4>Items</h4>
         <li>item</li>
         <li>item</li>
         <li>item</li>
         <li>item</li>
       </div>
-      <div class='footerarticle' style='width:10%'>
+      <div class='footerarticle'>
         <h4>Other Items</h4>
         <li>item</li>
         <li>item</li>
@@ -84,10 +77,10 @@
         <li>item</li>
       </div>
       <div class='footerarticle' style='width:60%'>
-        <span class='icon'><i class="fa fa-fw fa-twitter fa-2x"></i></span>
-        <span class='icon'><i class="fa fa-fw fa-facebook fa-2x"></i></span>
-        <span class='icon'><i class="fa fa-fw fa-instagram fa-2x"></i></span>
-        <span class='icon'><a><i class="fa fa-fw fa-linkedin fa-2x"></i></a></span>
+        <span class='icon'><a href='https://twitter.com/caredash'><i class="fa fa-fw fa-twitter fa-2x"></i></a></span>
+        <span class='icon'><a href='https://www.facebook.com/caredash/'><i class="fa fa-fw fa-facebook fa-2x"></i></a></span>
+        <span class='icon'><a href='https://www.instagram.com/caredash/'><i class="fa fa-fw fa-instagram fa-2x"></i></a></span>
+        <span class='icon'><a href='https://www.linkedin.com/company-beta/10800134/?pathWildcard=10800134'><i class="fa fa-fw fa-linkedin fa-2x"></i></a></span>
       </div>
     </div>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
