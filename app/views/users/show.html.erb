@@ -1,0 +1,35 @@
+<div id='contain'>
+  <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/14222338_10207850048434033_2604131363820665823_n.jpg?oh=3528ac137e1c5a21ba0d71036cedbc72&oe=5996E069" id='mainpic'>
+  <div id='loginbox' style='width:30%'>
+    <h4>Sign Up!</h4>
+    <p>It's easy! Just fill in this form and you're a member!</p>
+    <%= form_for User.new do |f| %>
+      <%= f.text_field :first_name, class: "form-control", required: true, placeholder: "First Name" %>
+      <%= f.text_field :last_name, class: "form-control", required: true, placeholder: "Last Name" %>
+      <%= f.text_field :email, class: "form-control", required: true, placeholder: "Email" %>
+      <%= f.password_field :password, class: "form-control", required: true, placeholder: "Password" %>
+      <%= f.password_field :password, class: "form-control final", required: true, placeholder: "Confirm Password" %>
+      <span id='buttons'>
+        <% if !current_user %>
+        <%= f.submit 'Sign Up', :class => 'signup' %>
+        <a data-toggle="modal" data-target="#myModal"><button class='login'>Login</button></a>
+        <% end %>
+      </span>
+    <% end %>
+  </div>
+</div>
+
+<div class='articlescontainer'>
+  <h1>Reasons To Join</h1><br><br>
+  <% Article.all.each do |a|%>
+  <div class='article' style='width:25%'>
+    <%= image_tag a.image_url, style: 'width:200px;height:200px', class: 'center-block'%> <br>
+    <h4 stlye='align:center'><%= a.name %></h4>
+    <span>
+      <%= truncate(a.text, length: 295) %>
+    </span><br><br>
+    <%= link_to 'Read More', article_path(a), :class => 'btn btn-info center-block bn' %>
+  </div>
+  <% end %>
+</div>
+<br><br><br>
